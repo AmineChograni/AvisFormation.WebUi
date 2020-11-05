@@ -12,8 +12,12 @@ namespace AvisFormation.WebUi.Controllers
         // GET: Formation
         public ActionResult ToutesLesFormations()
         {
-            var context =new  AvisEntities();
-            return View();
+            var listFormation = new List<Formation>();
+            using (var context =new AvisEntities())
+            {
+                listFormation = context.Formation.ToList();
+            }
+            return View(listFormation);
         }
     }
 }
