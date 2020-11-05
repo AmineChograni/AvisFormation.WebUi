@@ -357,6 +357,16 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvisFormation.Data\AvisFormation.Data.csproj">
+      <Project>{0920a6b4-ffbf-4181-8040-22b6ad9cf5b0}</Project>
+      <Name>AvisFormation.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AvisFormation.Logic\AvisFormation.Logic.csproj">
+      <Project>{44d524f4-4cea-4e91-a199-a28cce784314}</Project>
+      <Name>AvisFormation.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
