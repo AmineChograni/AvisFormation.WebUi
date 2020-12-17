@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AvisFormation.Data.Formation>
+﻿@model List<AvisFormation.Data.Formation>
 
 @{
     ViewBag.Title = "Toutes Les Formations";
@@ -6,46 +6,15 @@
 
 <h2>Liste Des Formations</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Url)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomSeo)
-        </th>
-        <th></th>
-    </tr>
+@foreach (var form in Model)
+{
+    <hr />
+    <div><span>Nom : </span><span>@form.Nom</span></div>
+    <div><span>Description : </span><span>@form.Description</span></div>
+    <div><span>Nom SEO : </span><span>@form.NomSeo</span></div>
+    @Html.ActionLink("Details Formation", "DetailsFormation", "Formation",new { nomSeo=form.NomSeo},null);
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Url)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomSeo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
 }
 
-</table>
+
+

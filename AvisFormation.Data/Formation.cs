@@ -11,7 +11,8 @@ namespace AvisFormation.Data
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Formation
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,7 @@ namespace AvisFormation.Data
         }
     
         public int Id { get; set; }
+        [DisplayName("Nom de la formation : ")]
         public string Nom { get; set; }
         public string Url { get; set; }
         public string Description { get; set; }
