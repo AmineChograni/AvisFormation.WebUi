@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AvisFormation.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,5 +14,6 @@ namespace AvisFormation.WebUi.Models
         public string FUrl { get; internal set; }
         public double FNote { get; internal set; }
         public int FNbrAvis { get; internal set; }
+        public List<Avis> Avis { get; internal set; }
     }
 }

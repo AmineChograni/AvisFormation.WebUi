@@ -7,7 +7,34 @@
 <div><span>Nom : </span><span>@Model.FName</span></div>
 <div><span>Description : </span><span>@Model.FDescription</span></div>
 <div><span>Nom SEO : </span><span>@Model.FNomSEO</span></div>
-<div><span>Note : </span><span>@Model.FNote</span></div>
+@if (Model.FNote == 0)
+{
+    <div><span>Note : </span><span>Aucune note</span></div>
+}
+else
+{
+    <div><span>Note : </span><span>@Model.FNote</span></div>
+}
+
 <div><span>nomber Avis : </span><span>@Model.FNbrAvis</span></div>
 <div><span>Formation URL : </span><span>@Model.FUrl</span></div>
 
+@if (Model.Avis == null)
+{
+    <h6>Aucun avis</h6>
+}
+else
+{
+<ul>
+    @foreach (var item in Model.Avis)
+    {
+    <li>@item.Nom</li>
+    <li>@item.Note</li>
+    <li>@item.DateAvis</li>
+    <li>@item.Description</li>
+    }
+</ul>
+<hr />
+ }
+
+    

@@ -37,9 +37,12 @@ namespace AvisFormation.WebUi.Controllers
                 vm.FDescription = formationEntity.Description;
                 vm.FNomSEO = formationEntity.NomSeo;
                 vm.FUrl = formationEntity.Url;
-                
-                vm.FNote = formationEntity.Avis.Average(a => a.Note);
-                vm.FNbrAvis = formationEntity.Avis.Count();
+                if (formationEntity.Avis.Count != 0)
+                {
+                    vm.FNote = formationEntity.Avis.Average(a => a.Note);
+                    vm.FNbrAvis = formationEntity.Avis.Count();
+                    vm.Avis = formationEntity.Avis.ToList();
+                }
             }
 
             return View(vm);
