@@ -18,23 +18,33 @@ else
 
 <div><span>nomber Avis : </span><span>@Model.FNbrAvis</span></div>
 <div><span>Formation URL : </span><span>@Model.FUrl</span></div>
-
+@Html.ActionLink("Ajouter un avis", "AjouterUnAvis", "Avis", new { nomSeo = Model.FNomSEO }, null);
 @if (Model.Avis == null)
 {
     <h6>Aucun avis</h6>
 }
 else
 {
-<ul>
-    @foreach (var item in Model.Avis)
-    {
-    <li>@item.Nom</li>
-    <li>@item.Note</li>
-    <li>@item.DateAvis</li>
-    <li>@item.Description</li>
-    }
-</ul>
-<hr />
- }
+    <ul>
+        @foreach (var item in Model.Avis)
+        {
+            <li>@item.Nom</li>
+            <li>@item.Note</li>
+            <li>@item.DateAvis</li>
+            <li>@item.Description</li>
+        }
+    </ul>
+    <hr />
+}
 
-    
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            var avissuccess = '@TempData["AvisSuccess"]'
+            if (avissuccess != '')
+                alertify.success(avissuccess);
+        });
+    </script>
+    }
+
+
