@@ -171,6 +171,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AvisController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\FormationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -178,6 +179,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AccueilViewModel.cs" />
     <Compile Include="Models\AjouterUnAvisViewModel.cs" />
     <Compile Include="Models\FormationAvecAvisViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -366,6 +368,9 @@
     <Content Include="Views\Formation\ToutesLesFormations.cshtml" />
     <Content Include="Views\Formation\DetailsFormation.cshtml" />
     <Content Include="Views\Avis\AjouterUnAvis.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Contact\Merci.cshtml" />
+    <Content Include="Views\Contact\ErreurEnvoi.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

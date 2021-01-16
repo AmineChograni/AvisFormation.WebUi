@@ -75,6 +75,7 @@
     <Compile Include="Formation.cs">
       <DependentUpon>AvisFormationDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormationAvecAvisDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>AvisFormationDbModel.tt</DependentUpon>

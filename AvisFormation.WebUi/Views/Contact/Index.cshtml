@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container bg-white">
+    <h2>Contacter nous ! </h2>
+    @using (Html.BeginForm("EnvoyerEmail", "contact", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label>Nom :</label>
+            <input class="form-control" name="nom" id="nom" required />
+        </div>
+
+        <div class="form-group">
+            <label>Email :</label>
+            <input class="form-control" name="email" id="email" required />
+        </div>
+
+        <div class="form-group">
+            <label>Message :</label>
+            <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
+        </div>
+        <input type="submit" class="btn btn-warning" value="Envoyer"/>
+
+    }
+</div>
+
