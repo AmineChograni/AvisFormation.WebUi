@@ -4,17 +4,39 @@
     ViewBag.Title = "Toutes Les Formations";
 }
 
-<h2>Liste Des Formations</h2>
+<h2 class="text-info">Liste Des Formations</h2>
 
-@foreach (var form in Model)
-{
-    <hr />
-    <div><span>Nom : </span><span>@form.Nom</span></div>
-    <div><span>Description : </span><span>@form.Description</span></div>
-    <div><span>Nom SEO : </span><span>@form.NomSeo</span></div>
-    @Html.ActionLink("Details Formation", "DetailsFormation", "Formation",new { nomSeo=form.NomSeo},null);
+@*<div class="container text-center">
+    <div class="row">
+        @foreach (var dto in Model.ListFormations)
+        {
+            <div class="col-sm-6">
+                <article class="alert alert-info">
+                    <h4>@Html.ActionLink(dto.Formation.Nom, "DetailsFormation", "Formation", new { nomSeo = dto.Formation.NomSeo }, null)</h4>
+                    <div>@dto.Note /5</div>
+                    <div>@dto.Formation.Description</div>
+                </article>
+            </div>
 
-}
+        }
+    </div>
+
+</div>*@
+
+<div class="container text-center">
+    <div class="row">
+        @foreach (var form in Model)
+        {
+        <div class="col-sm-12">
+            <article class="alert alert-info">
+                <h4>@form.Nom</h4>
+                <div><h6>Description : </h6><span>@form.Description</span></div>
+                @Html.ActionLink("Details Formation", "DetailsFormation", "Formation", new { nomSeo = form.NomSeo }, null)
+            </article>
+        </div>
+        }
+    </div>
+</div>
 
 
 

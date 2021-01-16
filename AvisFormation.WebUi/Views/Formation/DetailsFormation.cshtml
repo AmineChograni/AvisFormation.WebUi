@@ -3,39 +3,68 @@
     ViewBag.Title = "DetailsFormation";
 }
 
-<h2>DetailsFormation</h2>
-<div><span>Nom : </span><span>@Model.FName</span></div>
-<div><span>Description : </span><span>@Model.FDescription</span></div>
-<div><span>Nom SEO : </span><span>@Model.FNomSEO</span></div>
-@if (Model.FNote == 0)
-{
-    <div><span>Note : </span><span>Aucune note</span></div>
-}
-else
-{
-    <div><span>Note : </span><span>@Model.FNote</span></div>
-}
+<h2 class="text-info">DetailsFormation</h2>
 
-<div><span>nomber Avis : </span><span>@Model.FNbrAvis</span></div>
-<div><span>Formation URL : </span><span>@Model.FUrl</span></div>
-@Html.ActionLink("Ajouter un avis", "AjouterUnAvis", "Avis", new { nomSeo = Model.FNomSEO }, null);
+<div class="card bg-secondary">
+    <h5 class="card-header">@Model.FName</h5>
+    <div class="card-body">
+        @if (Model.FNote == 0)
+        {
+            <h5><span>Aucune note</span></h5>
+        }
+        else
+        {
+            <h5><span>Note : </span><span>@Model.FNote /5</span></h5>
+        }
+        <p><h6>Description : </h6><span>@Model.FDescription</span></p>
+        <div class="btn btn-light">@Html.ActionLink("Ajouter un avis", "AjouterUnAvis", "Avis", new { nomSeo = Model.FNomSEO }, null)</div>
+    </div>
+
+    <div class="card-footer">
+        <div><span>nomber Avis : </span><span>@Model.FNbrAvis</span></div>
+    </div>
+</div>
+
+
+
+
+
+@*<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        Featured
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+</div>*@
+
+
+
 @if (Model.Avis == null)
 {
-    <h6>Aucun avis</h6>
+    <h4 class="text-center text-info" style="margin-top:20px;">Aucun avis</h4>
 }
 else
 {
-    <ul>
-        @foreach (var item in Model.Avis)
+        foreach (var item in Model.Avis)
         {
-            <li>@item.Nom</li>
-            <li>@item.Note</li>
-            <li>@item.DateAvis</li>
-            <li>@item.Description</li>
+            <div class="card bg-info text-center" style="margin:20px;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item bg-info"><h5>@item.Nom</h5></li>
+                    <li class="list-group-item bg-secondary">@item.Note /5</li>
+                    <li class="list-group-item bg-secondary">@item.DateAvis</li>
+                    <li class="list-group-item bg-dark"><p>@item.Description</p></li>
+                </ul>
+            </div>
+            
         }
-    </ul>
-    <hr />
 }
+
+
+
+
 
 @section scripts{
     <script type="text/javascript">

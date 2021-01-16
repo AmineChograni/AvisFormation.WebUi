@@ -3,18 +3,29 @@
     ViewBag.Title = "Accueil";
 }
 
-<div class="jumbotron text-center">
-    <h1>Avis Formation</h1>
-    <p>Choisissez la meilleure formation !</p>
+<div class="jumbotron bg-secondary  text-center ">
+    <h1 class="display-4 text-info" >Centre de formation Chograni</h1>
+    <hr class="my-4">
+    <p class="lead">Le meilleur centre d'apprentissage des techniques de programmation et d'informatique</p>
+    <p>Choisissez la meilleure formation ! et laisser votre avis</p>
+    <a class="btn btn-info btn-lg" href="/Formation/ToutesLesFormations" role="button">Par ici</a>
 </div>
 
+
+
 <div class="container text-center">
-    @foreach(var dto in Model.ListFormations)
-    {
-        <article>
-            @Html.ActionLink(dto.Formation.Nom,"DetailsFormation","Formation",new {nomSeo= dto.Formation.NomSeo },null)
-            <div>@dto.Note</div>
-            <div>@dto.Formation.Description</div>
-        </article>
-    }
+    <div class="row">
+            @foreach (var dto in Model.ListFormations)
+            {
+                <div class="col-sm-6">
+                    <article class="alert alert-info">
+                        <h4>@Html.ActionLink(dto.Formation.Nom, "DetailsFormation", "Formation", new { nomSeo = dto.Formation.NomSeo }, null)</h4>
+                        <div>@dto.Note /5</div>
+                        <div>@dto.Formation.Description</div>
+                    </article>
+                </div>
+                
+            }
+    </div>
+    
 </div>

@@ -2,8 +2,8 @@
 @{
     ViewBag.Title = "Index";
 }
-<div class="container bg-white">
-    <h2>Contacter nous ! </h2>
+<div class="container bg-dark">
+    <h2 class="text-info">Contacter nous ! </h2>
     @using (Html.BeginForm("EnvoyerEmail", "contact", FormMethod.Post))
     {
         <div class="form-group">
@@ -20,7 +20,7 @@
             <label>Message :</label>
             <textarea class="form-control" name="message" id="message" rows="5" required></textarea>
         </div>
-        <input type="submit" class="btn btn-warning" value="Envoyer"/>
+        <input type="submit" class="btn btn-info" value="Envoyer"/>
 
     }
 </div>
