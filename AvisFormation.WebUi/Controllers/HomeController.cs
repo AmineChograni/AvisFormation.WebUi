@@ -23,7 +23,7 @@ namespace AvisFormation.WebUi.Controllers
                     if (f.Avis.Count == 0)
                         dto.Note = 0;
                     else
-                        dto.Note = Math.Round(f.Avis.Average(a => a.Note),2);
+                        dto.Note = Math.Round(f.Avis.Average(a => a.Note),1);
                     vm.ListFormations.Add(dto);
                 }
             }
