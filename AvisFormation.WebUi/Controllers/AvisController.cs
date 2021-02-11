@@ -12,6 +12,7 @@ namespace AvisFormation.WebUi.Controllers
     public class AvisController : Controller
     {
         // GET: Avis
+        [Authorize]
         public ActionResult AjouterUnAvis(string nomSeo)
         {
             var vm = new AjouterUnAvisViewModel();

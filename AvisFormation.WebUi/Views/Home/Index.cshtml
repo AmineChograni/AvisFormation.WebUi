@@ -3,29 +3,98 @@
     ViewBag.Title = "Accueil";
 }
 
-<div class="jumbotron bg-secondary  text-center ">
-    <h1 class="display-4 text-info" >Centre de formation Chograni</h1>
-    <hr class="my-4">
-    <p class="lead">Le meilleur centre d'apprentissage des techniques de programmation et d'informatique</p>
-    <p>Choisissez la meilleure formation ! et laisser votre avis</p>
-    <a class="btn btn-info btn-lg" href="/Formation/ToutesLesFormations" role="button">Par ici</a>
+<div class="jumbotron text-center">
+    <h1>EPIM E-learning</h1>
+    <p>Excellez dans votre domaine</p>
 </div>
+<div class="row">
+    @foreach (var f in Model.ListFormations)
+    {
+        <div class="card col-md-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@f.Formation.Nom</h5>
 
+                <p class="card-text">@f.Formation.Description</p>
+                @if (f.Note == 0)
+                {
+                    <p class="text-danger">Aucun Avis</p>
+                }
+                else
+                {
+                    for (var i = 0; i < f.Note; i++)
+                    {
+                        <i class="bi bi-star-fill icon-orange"></i>
+                    }
+                    <br />
+                }
 
+                @Html.ActionLink("Details Formation", "DetailsFormation", "Formation", new { nomSeo = f.Formation.NomSeo }, htmlAttributes: new { @class = "btn btn-primary btn-orange " })
+            </div>
+        </div>
+    }
 
-<div class="container text-center">
-    <div class="row">
-            @foreach (var dto in Model.ListFormations)
-            {
-                <div class="col-sm-6">
-                    <article class="alert alert-info">
-                        <h4>@Html.ActionLink(dto.Formation.Nom, "DetailsFormation", "Formation", new { nomSeo = dto.Formation.NomSeo }, null)</h4>
-                        <div>@dto.Note /5</div>
-                        <div>@dto.Formation.Description</div>
-                    </article>
-                </div>
-                
-            }
+</div>
+<div class="container bg-white text-center">
+    <h2 style="padding-top:20px;">Pourquoi s'inscrire a Epim E-lerning</h2>
+    <h3>Benefices formateur</h3>
+    <div class="row ">
+        <div class="col-md-3 col-sm-6">
+            <i class="bi bi-cart icon-style"></i>
+            <h5>Conversion</h5>
+            <p>Améliorez votre convertion</p>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <i class="bi bi-eye-fill icon-style"></i>
+            <h5>Visibilité</h5>
+            <p>Améliorez votre visibilité</p>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <i class="bi bi-hand-thumbs-up-fill icon-style "></i>
+            <h5>Fedelisation</h5>
+            <p>Améliorez votre fedelisation</p>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+            <i class="bi bi-check-square-fill icon-style"></i>
+            <h5>Confiance</h5>
+            <p>Améliorez votre confiance</p>
+        </div>
     </div>
-    
+</div>
+<div class="container text-center" style="padding-top:20px;padding-bottom:20px;">
+    <div class="row">
+        <div class="col-md-8 ">
+            <h4>Vous etes un professionnel de la formation</h4><p> afficher notre badge sur votre site pour augmenter votre conversion</p>
+        </div>
+        <div class="col-md-4">
+            <div class="widget">
+                <div class="widget-top">
+                    <p>
+                        Avis Eleve 4.8/5
+                        <i class="bi bi-star-fill icon-orange"></i><i class="bi bi-star-fill icon-orange"></i><i class="bi bi-star-fill icon-orange"></i><i class="bi bi-star-fill icon-orange"></i><i class="bi bi-star-half icon-orange"></i>
+                    </p>
+                </div>
+                <div class="widget-bottom">
+                    Avis recoltes par avis formation
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row  bg-white text-center">
+    <div class="col-md-3">
+        <p class="percent">100%</p>
+        <p><b>100% des internautes consultent les avis</b></p>
+    </div>
+    <div class="col-md-3">
+        <p class="percent">80%</p>
+        <p><b>80% des internautes consultent les avis</b></p>
+    </div>
+    <div class="col-md-3">
+        <p class="percent">75%</p>
+        <p><b>75% des internautes consultent les avis</b></p>
+    </div>
+    <div class="col-md-3">
+        <p class="percent">90%</p>
+        <p><b>90% des internautes consultent les avis</b></p>
+    </div>
 </div>

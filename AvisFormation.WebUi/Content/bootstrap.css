@@ -6,6 +6,7 @@
  */
 :root {
   --blue: #007bff;
+  --gris: #f5f5f5;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -6792,6 +6793,9 @@ button.bg-dark:focus {
 
 .bg-white {
   background-color: #fff !important;
+}
+.bg-gris {
+    background-color: #f5f5f5 !important;
 }
 
 .bg-transparent {

@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #F5F5F5;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +23,39 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.jumbotron {
+    background-color: black;
+    color: orange;
+}
+.icon-style{
+    background-color: white;
+    color:orange;
+    font-size:50px;
+
+}
+.widget{
+    background-color:white;
+    border:solid 1px orange;
+    border-radius:5px;
+}
+.widget-bottom {
+    background-color: orange;
+    color:white;
+    padding-bottom:9px;
+}
+.widget div {
+    padding-top: 10px;
+}
+.icon-orange{
+    color:orange;
+}
+.percent{
+    font-size:1.5em;
+    font-weight:bold;
+
+}
+.btn-orange{
+    background-color:orange;
+}
+
