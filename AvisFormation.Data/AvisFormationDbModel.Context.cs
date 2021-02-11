@@ -28,5 +28,7 @@ namespace AvisFormation.Data
         public virtual DbSet<Avis> Avis { get; set; }
         public virtual DbSet<Formation> Formation { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Personne> Personne { get; set; }
+        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
     }
 }
